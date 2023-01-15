@@ -1,0 +1,39 @@
+﻿var common = require("Common")
+
+  function addOrders() {
+    
+    let data = common.getDataFromDb("SELECT * from [orders].[dbo].[orders]", ["customerName", "street",
+       "city", "state"]);
+       
+    //Log.Message(data);
+    
+    TestedApps.Orders.Run(1, true);
+    for (i = 0; i < data.length/4; i++) {
+      
+      var name = data[i * 4];
+      var street = data[i * 4 + 1];
+      var city = data[i * 4 + 2];
+      var state = data[i * 4 + 3];
+       
+      let orders = Aliases.Orders;
+      orders.MainForm.ToolBar.ClickItem(4, false);
+      let orderForm = orders.OrderForm;
+      let groupBox = orderForm.Group;
+      let textBox = groupBox.Customer;
+      textBox.Click(45, 16);
+      textBox.SetText(name);
+      textBox = groupBox.Street;
+      textBox.Click(99, 8);
+      textBox.SetText(street);
+      textBox = groupBox.City;
+      textBox.Click(33, 7);
+      textBox.SetText(city);
+      textBox = groupBox.State;
+      textBox.Click(66, 7);
+      textBox.SetText(state);
+      orderForm.Click(130, 15);
+      orderForm.ButtonOK.ClickButton();
+  }
+  
+}
+

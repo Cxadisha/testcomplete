@@ -3,5 +3,8 @@
 	<children>
 		<child name="Unit1" key="{B1BA9E15-DD31-4778-8D9D-4543C1ADAF0B}" path="Unit1.js" />
 		<child name="Unit2" key="{141131E5-C1AA-4B22-8AA2-29AEEC466078}" path="Unit2.js" />
+		<child name="Common" key="{0E51A992-EE14-4705-B7E4-293EFAB47A71}" path="Common.js" />
+		<child name="CallAndAdd" key="{723D7EC6-E641-497D-A78B-25CF239BDC40}" path="CallAndAdd.js" />
+		<child name="ExcelDB" key="{F6CF5769-073E-401F-848E-B901783C37BC}" path="ExcelDB.js" />
 	</children>
 </Root>
